@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
+@ReadOnlyTransactionalService
 class BrouwerServiceImpl implements BrouwerService {
     private final BrouwerDAO brouwerDAO;
 
@@ -15,7 +15,9 @@ class BrouwerServiceImpl implements BrouwerService {
     BrouwerServiceImpl(BrouwerDAO brouwerDAO) {
         this.brouwerDAO = brouwerDAO;
     }
+
     @Override
+    @ModifyingTransactionalServiceMethod
     public void create(Brouwer brouwer) {
         brouwerDAO.create(brouwer);
     }

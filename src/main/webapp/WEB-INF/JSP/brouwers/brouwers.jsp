@@ -1,6 +1,7 @@
-<%@page contentType='text/html' pageEncoding='UTF-8' session='false'%>
+<%@page contentType='text/html' pageEncoding='UTF-8'%>
 <%@taglib prefix='c' uri='http://java.sun.com/jsp/jstl/core'%>
 <%@taglib prefix='v' uri='http://vdab.be/tags' %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!doctype html>
 <html lang='nl'>
 <head>
@@ -29,7 +30,7 @@
     <tbody>
     <c:forEach items="${brouwers}" var="brouwer">
         <tr>
-            <td class="rechts">${brouwer.brouwerNr}</td>
+            <td class="rechts">${brouwer.id}</td>
             <td>${brouwer.naam}</td>
             <td>${brouwer.adres.straat}</td>
             <td>${brouwer.adres.huisNr}</td>

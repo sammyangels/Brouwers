@@ -10,7 +10,7 @@ import java.io.Serializable;
 
 public class Brouwer implements Serializable {
     private static final long serialVersionUID = 1L;
-    private long brouwerNr;
+    private long id;
     @NotBlank
     private String naam;
     @NotNull
@@ -28,17 +28,17 @@ public class Brouwer implements Serializable {
         this.omzet = omzet;
     }
 
-    public Brouwer(long brouwerNr,String naam, Adres adres, Integer omzet) {
+    public Brouwer(long id,String naam, Adres adres, Integer omzet) {
         this(naam, adres, omzet);
-        this.brouwerNr = brouwerNr;
+        this.id = id;
     }
 
-    public long getBrouwerNr() {
-        return brouwerNr;
+    public long getId() {
+        return id;
     }
 
-    public void setBrouwerNr(long brouwerNr) {
-        this.brouwerNr = brouwerNr;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public Adres getAdres() {

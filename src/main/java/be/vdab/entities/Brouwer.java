@@ -3,18 +3,24 @@ package be.vdab.entities;
 import be.vdab.valueobjects.Adres;
 import org.hibernate.validator.constraints.NotBlank;
 
+import javax.persistence.*;
 import javax.validation.Valid;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
+@Entity
+@Table(name = "brouwers")
 public class Brouwer implements Serializable {
     private static final long serialVersionUID = 1L;
+    @Id
+    @GeneratedValue
     private long id;
     @NotBlank
     private String naam;
     @NotNull
     @Valid
+    @Embedded
     private Adres adres;
     @Min(0)
     private Integer omzet;

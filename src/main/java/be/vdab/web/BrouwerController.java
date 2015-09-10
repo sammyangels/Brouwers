@@ -3,6 +3,7 @@ package be.vdab.web;
 import be.vdab.entities.Brouwer;
 import be.vdab.services.BrouwerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
@@ -15,7 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.validation.Valid;
 
 @Controller
-@RequestMapping("/brouwers")
+@RequestMapping(value = "/brouwers", produces = MediaType.TEXT_HTML_VALUE)
 class BrouwerController {
     private final BrouwerService brouwerService;
     private static final String TOEVOEGEN_VIEW = "brouwers/toevoegen";

@@ -7,10 +7,15 @@ import javax.persistence.*;
 import javax.validation.Valid;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 
 @Entity
 @Table(name = "brouwers")
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement
 public class Brouwer implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
